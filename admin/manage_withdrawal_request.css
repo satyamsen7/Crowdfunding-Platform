@@ -1,0 +1,311 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure footer stays at the bottom */
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #1abc9c;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #1abc9c; /* Highlighted admin welcome */
+    font-weight: 600;
+}
+
+/* Main Content */
+main {
+    flex: 1; /* Push footer to the bottom */
+    padding: 30px;
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 22px;
+    color: #1abc9c;
+    border-bottom: 3px solid #1abc9c;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+section p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
+
+section p strong {
+    color: #333;
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+nav a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #1abc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #16a085; /* Slightly darker green */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+table:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+thead {
+    background-color: #1abc9c;
+    color: white;
+    text-align: left;
+}
+
+thead th {
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+tbody td {
+    padding: 18px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    font-weight: 500;
+}
+
+tbody tr:hover {
+    background-color: #eaf8f4;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Delete Button */
+.delete-btn {
+    padding: 8px 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Success and Error Messages */
+.success-message {
+    color: #2ecc71;
+    background-color: #eaf8f4;
+    padding: 15px;
+    border: 1px solid #2ecc71;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.error-message {
+    color: #e74c3c;
+    background-color: #fdecea;
+    padding: 15px;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Search Bar */
+.search-bar {
+    margin: 20px 0;
+}
+
+.search-bar form {
+    display: inline;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+    margin-right: 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 200px;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #1abc9c;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #16a085;
+}
+
+/* Reset Search Button */
+button[type="reset"] {
+    padding: 10px 15px;
+    background-color: #f39c12;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="reset"]:hover {
+    background-color: #e67e22;
+}
+
+/* Hoverable Table Row */
+table tbody tr:hover {
+    background-color: #eaf8f4;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 18px;
+    }
+
+    section p {
+        font-size: 14px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .search-bar input[type="text"] {
+        font-size: 12px;
+    }
+
+    .search-bar button {
+        font-size: 12px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    table td, table th {
+        padding: 12px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

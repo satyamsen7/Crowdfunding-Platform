@@ -1,0 +1,194 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure footer stays at the bottom */
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #1abc9c;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #1abc9c; /* Highlighted admin welcome */
+}
+
+/* Main Content */
+main {
+    flex: 1; /* Push footer to the bottom */
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 20px;
+    color: #1abc9c;
+    border-bottom: 2px solid #1abc9c;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
+
+section p strong {
+    color: #333;
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #16a085; /* Slightly darker green */
+}
+
+/* Footer Styles */
+footer {
+    background-color: white;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #1abc9c;
+    color: white;
+    text-align: left;
+}
+
+thead th {
+    padding: 15px;
+    font-size: 16px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+tbody td {
+    padding: 15px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #eaf8f4;
+}
+
+/* Delete Button */
+.delete-btn {
+    padding: 8px 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Success and Error Messages */
+.success-message {
+    color: #2ecc71;
+    background-color: #eaf8f4;
+    padding: 10px;
+    border: 1px solid #2ecc71;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error-message {
+    color: #e74c3c;
+    background-color: #fdecea;
+    padding: 10px;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 18px;
+    }
+
+    section p {
+        font-size: 14px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
