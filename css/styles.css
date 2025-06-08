@@ -1,0 +1,298 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4; /* Light background for the entire page */
+  color: #333;
+}
+
+header {
+  background: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1abc9c;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #1abc9c; /* Hover effect */
+}
+
+.actions .btn {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actions .btn.secondary {
+  background: transparent;
+  color: #1abc9c;
+  border: 1px solid #1abc9c;
+}
+
+.actions .btn.secondary:hover {
+  background: #1abc9c;
+  color: white;
+}
+
+.actions .btn {
+  background: #1abc9c;
+  color: white;
+}
+
+.actions .btn:hover {
+  background: #16a085; /* Darker shade on hover */
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  background: #e8f8f5;
+  padding: 20px;
+  min-height: 80vh;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.hero-content p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #555;
+}
+
+.success-story {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.success-story img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.form-container {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow */
+  transition: transform 0.3s ease;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form input,
+form select {
+  height: 45px;
+}
+
+form textarea {
+  resize: none;
+  height: 100px;
+}
+
+form button {
+  background: #1abc9c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background: #16a085; /* Hover effect */
+}
+
+.info {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+}
+
+/* Focus states for inputs */
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border-color: #1abc9c;
+}
+
+/* Form container smooth appearance on load */
+.form-container {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Footer Styles */
+footer {
+  background: white;
+  color: #333;
+  padding: 30px 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer .footer-left p {
+  margin: 0;
+  font-size: 14px;
+  color: #888;
+}
+
+footer .footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+footer .footer-right nav {
+  margin-bottom: 10px;
+}
+
+footer .footer-right a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 10px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+footer .footer-right a:hover {
+  color: #1abc9c; /* Highlight color on hover */
+}
+
+footer .social-icons {
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 10px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #1abc9c; /* Highlight color on hover */
+}
+
+/* Mobile-Responsive Footer */
+@media (max-width: 768px) {
+  footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .footer-right {
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  footer .footer-right nav {
+    margin-bottom: 15px;
+  }
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .success-story {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .form-container {
+    margin-top: 20px;
+    width: 90%;
+  }
+}
