@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation Page</title>
+  <link rel="stylesheet" href="css/styles.css"> <!-- Link to the external CSS -->
+  <style>
+    /* Add necessary styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: relative; /* For positioning the close button */
+    }
+
+    .popup-content h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-container {
+      width: 100%;
+    }
+
+    .form-container input,
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .form-container button {
+      background-color: #1abc9c;
+      color: white;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* Background overlay effect */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">Crowdfunding</div>
+      <nav>
+        <a href="index.php">Home</a>
+        <a href="browse-fundraisers.php">Browse Fundraisers</a>
+        <a href="How-it-works.html">How It Works</a>
+        <a href="help.html">Help</a>
+      </nav>
+      <div class="actions">
+        <button id="toggleBtn" class="btn secondary" onclick="toggleForm()">Sign In</button> <!-- Button triggers form toggle -->
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="terms-container">
+      <h1>Terms and Conditions</h1>
+
+      <section>
+        <h2>1. Introduction</h2>
+        <p>Welcome to Ketto! These terms and conditions outline the rules and regulations for the use of our website and services. By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use Ketto's website if you do not accept all of the terms and conditions stated on this page.</p>
+      </section>
+
+      <section>
+        <h2>2. Definitions</h2>
+        <p>In these Terms and Conditions, the following terms shall have the following meanings:</p>
+        <ul>
+          <li><strong>Website:</strong> Refers to the website operated by Ketto.</li>
+          <li><strong>User:</strong> Any person or entity that visits or uses our website or services.</li>
+          <li><strong>Fundraiser:</strong> A campaign or initiative created to raise funds on the website.</li>
+          <li><strong>Donor:</strong> An individual or entity who makes a donation on the platform.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Eligibility</h2>
+        <p>You must be at least 18 years old to use our services. By accessing or using Ketto, you represent and warrant that you are at least 18 years of age and have the legal capacity to enter into this agreement.</p>
+      </section>
+
+      <section>
+        <h2>4. User Account</h2>
+        <p>To access certain features of the website, you may need to create an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate. You are responsible for maintaining the confidentiality of your account login credentials.</p>
+      </section>
+
+      <section>
+        <h2>5. Donations</h2>
+        <p>All donations made through Ketto are processed securely. By making a donation, you agree to provide valid payment information and understand that your donation may be used to support the listed fundraiser or cause.</p>
+      </section>
+
+      <section>
+        <h2>6. Fundraisers</h2>
+        <p>Users creating a fundraiser must comply with our guidelines and provide accurate information about the cause. Ketto reserves the right to remove any campaign that violates our policies or is found to be misleading, fraudulent, or in violation of the law.</p>
+      </section>
+
+      <section>
+        <h2>7. Content Ownership</h2>
+        <p>Users retain ownership of any content they upload to the website, including but not limited to text, images, and videos. By submitting content, you grant Ketto a non-exclusive, royalty-free license to use, display, and distribute your content on our platform.</p>
+      </section>
+
+      <section>
+        <h2>8. Prohibited Uses</h2>
+        <p>You may not use our website or services for any illegal or prohibited activities. This includes, but is not limited to, the following:</p>
+        <ul>
+          <li>Engaging in fraudulent activities.</li>
+          <li>Posting defamatory or offensive content.</li>
+          <li>Violated copyright, trademark, or intellectual property rights.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>9. Limitation of Liability</h2>
+        <p>In no event shall Ketto or its affiliates be liable for any indirect, incidental, special, or consequential damages, or loss of profits arising from your use of the website or services, even if advised of the possibility of such damages.</p>
+      </section>
+
+      <section>
+        <h2>10. Termination</h2>
+        <p>Ketto reserves the right to suspend or terminate your account and access to the website if you violate these terms and conditions. Upon termination, your right to use the website will cease immediately.</p>
+      </section>
+
+      <section>
+        <h2>11. Governing Law</h2>
+        <p>These terms and conditions shall be governed by and construed in accordance with the laws of [Your Country]. Any disputes relating to these terms and conditions shall be subject to the exclusive jurisdiction of the courts located in [Your City/Country].</p>
+      </section>
+
+      <section>
+        <h2>12. Changes to Terms</h2>
+        <p>Ketto reserves the right to update or modify these terms at any time. When we make changes, we will update the "last modified" date at the bottom of this page. Your continued use of the website following the posting of changes constitutes your acceptance of those changes.</p>
+      </section>
+
+      <section>
+        <h2>13. Contact Us</h2>
+        <p>If you have any questions regarding these Terms and Conditions, please contact us at <a href="mailto:support@ketto.org">support@ketto.org</a>.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Modal (Popup) for Login and Register -->
+  <div id="overlay" class="overlay"></div>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <!-- Close Button Inside the Popup -->
+      <button class="close-btn" onclick="closeForm()">×</button>
+
+      <!-- Login Form -->
+      <div id="login-form" class="form-container">
+        <h2>Login</h2>
+        <form action="login.php" method="post">
+          <input type="text" name="loginInput" placeholder="Username or Email" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+        <p class="info">Don't have an account? <a href="javascript:void(0)" onclick="toggleForm()">Sign Up</a></p>
+      </div>
+
+      <!-- Register Form -->
+      <div id="register-form" class="form-container" style="display: none;">
+        <h2>Register for an Account</h2>
+        <form action="register.php" method="post">
+          <input type="text" name="fullname" placeholder="Full Name" required>
+          <input type="text" name="username" placeholder="Username" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+          <button type="submit">Register</button>
+        </form>
+        <p class="info">Already have an account? <a href="javascript:void(0)" onclick="toggleForm()">Login here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-right">
+        <nav>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms & Conditions</a>
+          <a href="contact-us.html">Contact Us</a>
+        </nav>
+      </div>
+      <div class="footer-left">
+        <p>&copy; 2024 Ketto. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Function to toggle between the register and login forms
+    function toggleForm() {
+      const registerForm = document.getElementById('register-form');
+      const loginForm = document.getElementById('login-form');
+      const overlay = document.getElementById('overlay');
+      const popup = document.getElementById('popup');
+      const toggleBtn = document.getElementById('toggleBtn');
+
+      // Show popup and overlay
+      overlay.style.display = 'block';
+      popup.style.display = 'flex';
+
+      // Toggle form visibility
+      if (registerForm.style.display === 'none') {
+        registerForm.style.display = 'block';
+        loginForm.style.display = 'none';
+        toggleBtn.textContent = 'Sign In';
+      } else {
+        registerForm.style.display = 'none';
+        loginForm.style.display = 'block';
+        toggleBtn.textContent = 'Sign Up';
+      }
+    }
+
+    // Close the popup form
+    function closeForm() {
+      const overlay = document.getElementById('overlay');
+      const popup = document.getElementById('popup');
+      overlay.style.display = 'none';
+      popup.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

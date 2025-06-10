@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundraiser Page</title>
+    <link rel="stylesheet" href="css/How-it-works.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.1/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.1/swiper-bundle.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+          <div class="logo">Crowdfunding</div>
+          <nav>
+            <a href="index.php">Home</a>
+            <a href="browse-fundraisers.php">Browse Fundraisers</a>
+            <a href="How-it-works.html">How It Works</a>
+            <a href="help.html">Help</a>
+          </nav>
+          <div class="actions">
+            <button id="toggleBtn" class="btn secondary" onclick="toggleForm()">Sign In</button> <!-- Button triggers form toggle -->
+          </div>
+        </div>
+      </header>
+    <div class="container2">
+        <!-- Header Section -->
+        <header class="hero">
+            <h1>Raising Funds was never this easy. Start a fundraiser in 5 minutes!</h1>
+        </header>
+
+        <!-- Main Section -->
+        <main class="main-content">
+            <!-- Left Section -->
+            <div class="left-section">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="image/image.png" alt="Fundraiser Story">
+                            <p>Asher’s family raised ₹3,49,016 in 2 days to fund his liver transplant</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="image/image-copy.png" alt="Fundraiser Story">
+                            <p>Another story about fundraising success</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="image/image-copy.png" alt="Fundraiser Story">
+                            <p>Another story about fundraising success</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="image/image-copy.png" alt="Fundraiser Story">
+                            <p>Another story about fundraising success</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="image/image-copy.png" alt="Fundraiser Story">
+                            <p>Another story about fundraising success</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="stats">
+                    <div>
+                        <h3>72 Lakh+</h3>
+                        <p>Donors</p>
+                    </div>
+                    <div>
+                        <h3>3.2 Lakh+</h3>
+                        <p>Fundraisers</p>
+                    </div>
+                    <div>
+                        <h3>0%</h3>
+                        <p>Platform Fee</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="right-section">
+                <h2>We know you are in urgent need of funds.</h2>
+                <p>Our personal fundraiser expert is waiting to get you started!</p>
+                <form id="fundraiser-form" action="submit_assistance.php" method="POST">
+                  <label for="name">Name *</label>
+                  <input type="text" id="name" name="name" placeholder="Your Name" required>
+              
+                  <label for="mobile">Your Mobile Number *</label>
+                  <div class="phone-input">
+                      <select id="country_code" name="country_code" required>
+                          <option value="+91">+91 (India)</option>
+                          <option value="+1">+1 (USA)</option>
+                          <option value="+44">+44 (UK)</option>
+                      </select>
+                      <input type="text" id="mobile" name="phone" placeholder="Mobile Number" required>
+                  </div>
+              
+                  <label for="purpose">What will the funds be used for? *</label>
+                  <select id="purpose" name="purpose" required>
+                      <option value="medical">Medical</option>
+                      <option value="education">Education</option>
+                      <option value="others">Others</option>
+                  </select>
+              
+                  <!-- Hidden input to store the request type -->
+                  <input type="hidden" id="request_type" name="request_type" value="">
+              
+                  <button type="submit" onclick="setRequestType('call')">Get a Call</button>
+                  <button type="submit" onclick="setRequestType('whatsapp')">Connect on WhatsApp</button>
+              </form>
+              
+              <script>
+                  function setRequestType(type) {
+                      document.getElementById('request_type').value = type;
+                  }
+              </script>
+              
+              
+              
+              
+              
+            </div>
+        </main>
+    </div>
+<!-- Modal (Popup) for Login and Register -->
+<div id="overlay" class="overlay"></div>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <!-- Close Button Inside the Popup -->
+    <button class="close-btn" onclick="closeForm()">×</button>
+
+    <!-- Login Form -->
+    <div id="login-form" class="form-container">
+      <h2>Login</h2>
+      <form action="login.php" method="post">
+        <input type="text" name="loginInput" placeholder="Username or Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p class="info">Don't have an account? <a href="javascript:void(0)" onclick="toggleForm()">Sign Up</a></p>
+    </div>
+
+    <!-- Register Form -->
+    <div id="register-form" class="form-container" style="display: none;">
+      <h2>Register for an Account</h2>
+      <form action="register.php" method="post">
+        <input type="text" name="fullname" placeholder="Full Name" required>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+      </form>
+      <p class="info">Already have an account? <a href="javascript:void(0)" onclick="toggleForm()">Login here</a></p>
+    </div>
+  </div>
+</div>
+    <footer>
+        <div class="container">
+          <div class="footer-right">
+            <nav>
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <a href="terms-and-conditions.html">Terms & Conditions</a>
+              <a href="contact-us.html">Contact Us</a>
+            </nav>
+          </div>
+          <div class="footer-left">
+            <p>&copy; 2024 Ketto. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+    <script src="js/How-it-works.js"></script>
+</body>
+</html>
